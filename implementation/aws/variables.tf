@@ -1,9 +1,3 @@
-variable "vpc_version" {
-  type        = string
-  description = "Module version used"
-  default     = "value"
-}
-
 variable "vpc_name" {
   type        = string
   description = "Name to be used on all the resources as identifier"
