@@ -8,6 +8,7 @@ module "vpc" {
   azs                 = var.vpc_azs
   private_subnets     = var.vpc_private_subnets
   public_subnets      = var.vpc_public_subnets
+  database_subnets    = var.vpc_database_subnets
   elasticache_subnets = var.vpc_elasticache_subnets
   redshift_subnets    = var.vpc_redshift_subnets
   intra_subnets       = var.vpc_intra_subnets
