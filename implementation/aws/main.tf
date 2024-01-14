@@ -24,5 +24,5 @@ module "vpc" {
   enable_vpn_gateway = var.vpc_enable_vpn_gateway
   single_nat_gateway = var.vpc_single_nat_gateway
 
-  tags = merge(var.vpc_tags, var.local.framework)
+  tags = merge(var.vpc_tags, local.framework)
 }
