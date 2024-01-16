@@ -20,6 +20,5 @@ jobs:
         format: template
         template: ".github/config/template.tpl"
         output: trivy.md
-        
-    - run: cat trivy.md >> $GITHUB_STEP_SUMMARY
-      if: always()
+
+    - run: cat trivy.md
