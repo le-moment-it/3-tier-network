@@ -8,18 +8,31 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      pull-requests: write 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Run Trivy vulnerability scanner in fs mode
+    - name: Run Trivy vulnerability scanner in config mode
       uses: aquasecurity/trivy-action@master
       with:
         scan-type: 'config'
         scan-ref: './implementation/aws'
         format: template
         template: "@.github/config/template.tpl"
-        output: trivy.md
+        output: ./documentation/aws/SECURITY.md
 
-    - run: cat trivy.md >> $GITHUB_STEP_SUMMARY
-      if: always()
+    - name: Commit SECURITY report
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add ./documentation/aws/SECURITY.md
+        git commit -m "CI - Add documentation"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
