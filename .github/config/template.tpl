@@ -1,6 +1,6 @@
 {{- if . }}
 {{- range . }}
-<h3>{{ escapeXML .Target }}</h3>
+<h3>Target <code>{{ escapeXML .Target }}</code></h3>
 {{- if (eq (len .Vulnerabilities) 0) }}
 <h4>No Vulnerabilities found</h4>
 {{- else }}
