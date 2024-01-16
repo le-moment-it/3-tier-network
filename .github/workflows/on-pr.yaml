@@ -17,3 +17,4 @@ jobs:
       with:
         scan-type: 'config'
         scan-ref: './implementation/aws'
+        template: "@/contrib/html.tpl"
