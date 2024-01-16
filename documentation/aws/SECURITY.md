@@ -1,8 +1,8 @@
 
-<h3>.</h3>
+<h3>Target <code>.</code></h3>
 <h4>No Vulnerabilities found</h4>
 <h4>No Misconfigurations found</h4>
-<h3>git::https:/github.com/terraform-aws-modules/terraform-aws-vpc?ref=v5.5.1/main.tf</h3>
+<h3>Target <code>git::https:/github.com/terraform-aws-modules/terraform-aws-vpc?ref=v5.5.1/main.tf</code></h3>
 <h4>No Vulnerabilities found</h4>
 <h4>Misconfigurations</h4>
 <table>
