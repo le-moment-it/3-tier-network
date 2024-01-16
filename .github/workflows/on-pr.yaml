@@ -18,7 +18,8 @@ jobs:
         scan-type: 'config'
         scan-ref: './implementation/aws'
         format: template
-        template: "@trivy/github-markdown.tpl"
+        template: ".github/config/template.tpl"
         output: trivy.md
+        
     - run: cat trivy.md >> $GITHUB_STEP_SUMMARY
       if: always()
